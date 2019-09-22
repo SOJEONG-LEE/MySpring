@@ -1,0 +1,20 @@
+package tommy.spring.web.board.impl;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import org.springframework.jdbc.core.RowMapper;
+
+import tommy.spring.web.board.BoardVO;
+
+public class BoardRowMapper implements RowMapper<BoardVO> {
+
+	@Override
+	public BoardVO mapRow(ResultSet rs, int rowNum) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+
+}

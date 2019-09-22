@@ -4,63 +4,76 @@
 	xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:aop="http://www.springframework.org/schema/aop"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
-		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 
+	<!-- DataSource -->
+	<context:property-placeholder
+		location="classpath:config/database.properties" />
+	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+		<!-- Oracle Database 18c -->
+		<!-- <property name="url" value="jdbc:oracle:thin:@localhost:1521/XEPDB1" /> -->
+		<!-- Oracle Database 11g -->
+		<!-- <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" /> -->
+		<property name="driverClassName" value="${jdbc.driver}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+	
+	<!-- JdbcTemplate -->
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<!-- TransactionManager -->
+	<bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<tx:advice id="txAdvice" transaction-manager="txManager">
+		<tx:attributes>
+			<tx:method name="get*" read-only="true"/>
+			<tx:method name="*"/>
+		</tx:attributes>
+	</tx:advice>
+	
+	<aop:config>
+		<aop:pointcut expression="execution(* tommy.spring.web..*(..))" id="txPointcut" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut" />
+	</aop:config>
 
 	<!-- aspect annotation -->
 	<context:component-scan base-package="tommy.spring.web"></context:component-scan>
-	<aop:aspectj-autoproxy /> 
+	<aop:aspectj-autoproxy />
 
 
 	<!-- aspect -->
-	<!-- <context:component-scan base-package="tommy.spring.web"></context:component-scan>
-	<aop:aspectj-autoproxy></aop:aspectj-autoproxy> 
-	 
-	<bean id="log" class="tommy.spring.web.common.Log4jAdvice"></bean>
-	<bean id="before" class="tommy.spring.web.common.BeforeAdvice"></bean>
-	<bean id="afterReturning" class="tommy.spring.web.common.AfterReturningAdvice"></bean> 
-	<bean id="afterThrowing" class="tommy.spring.web.common.AfterThrowingAdvice"></bean>
-	<bean id="after" class="tommy.spring.web.common.AfterAdvice"></bean>
-	<bean id="around" class="tommy.spring.web.common.AroundAdvice"></bean>
-	
-	<aop:config>
-		<aop:pointcut expression="execution(* tommy.spring.web..*Impl.*(..))" id="allPointcut" />
-		<aop:pointcut expression="execution(* tommy.spring.web..*Impl.get*(..))" id="getPointcut"/>
-		
-		<aop:aspect ref="afterThrowing">
-			<aop:after-throwing method="exceptionLog" pointcut-ref="allPointcut" throwing="e"/>
-		</aop:aspect>
-		
-		<aop:aspect ref="afterReturning">
-			<aop:after-returning method="afterLog" pointcut-ref="getPointcut" returning="returnObj"/>
-		</aop:aspect>
-		
-		<aop:aspect ref="around">
-			<aop:around method="aroundLog" pointcut-ref="getPointcut"/>
-		</aop:aspect>
-		
-		<aop:aspect ref="after">
-			<aop:after method="finallyLog" pointcut-ref="allPointcut"/>
-		</aop:aspect> 
-		
-		<aop:aspect ref="afterThrowing">
-			<aop:after-throwing method="exceptionLog" pointcut-ref="allPointcut"/>
-		</aop:aspect>
-		
-		<aop:aspect ref="afterReturning">
-			<aop:after-returning method="afterLog" pointcut-ref="getPointcut"/>
-		</aop:aspect>
-		
-		<aop:aspect ref="before">
-			<aop:before method="beforeLog" pointcut-ref="getPointcut"/>
-		</aop:aspect>
-		
-		<aop:aspect ref="log">
-			<aop:after method="printLogging" pointcut-ref="allPointcut" />
-		</aop:aspect>
-	</aop:config> -->
+	<!-- <context:component-scan base-package="tommy.spring.web"></context:component-scan> 
+		<aop:aspectj-autoproxy></aop:aspectj-autoproxy> <bean id="log" class="tommy.spring.web.common.Log4jAdvice"></bean> 
+		<bean id="before" class="tommy.spring.web.common.BeforeAdvice"></bean> <bean 
+		id="afterReturning" class="tommy.spring.web.common.AfterReturningAdvice"></bean> 
+		<bean id="afterThrowing" class="tommy.spring.web.common.AfterThrowingAdvice"></bean> 
+		<bean id="after" class="tommy.spring.web.common.AfterAdvice"></bean> <bean 
+		id="around" class="tommy.spring.web.common.AroundAdvice"></bean> <aop:config> 
+		<aop:pointcut expression="execution(* tommy.spring.web..*Impl.*(..))" id="allPointcut" 
+		/> <aop:pointcut expression="execution(* tommy.spring.web..*Impl.get*(..))" 
+		id="getPointcut"/> <aop:aspect ref="afterThrowing"> <aop:after-throwing method="exceptionLog" 
+		pointcut-ref="allPointcut" throwing="e"/> </aop:aspect> <aop:aspect ref="afterReturning"> 
+		<aop:after-returning method="afterLog" pointcut-ref="getPointcut" returning="returnObj"/> 
+		</aop:aspect> <aop:aspect ref="around"> <aop:around method="aroundLog" pointcut-ref="getPointcut"/> 
+		</aop:aspect> <aop:aspect ref="after"> <aop:after method="finallyLog" pointcut-ref="allPointcut"/> 
+		</aop:aspect> <aop:aspect ref="afterThrowing"> <aop:after-throwing method="exceptionLog" 
+		pointcut-ref="allPointcut"/> </aop:aspect> <aop:aspect ref="afterReturning"> 
+		<aop:after-returning method="afterLog" pointcut-ref="getPointcut"/> </aop:aspect> 
+		<aop:aspect ref="before"> <aop:before method="beforeLog" pointcut-ref="getPointcut"/> 
+		</aop:aspect> <aop:aspect ref="log"> <aop:after method="printLogging" pointcut-ref="allPointcut" 
+		/> </aop:aspect> </aop:config> -->
 
 
 	<!-- BoardService -->
