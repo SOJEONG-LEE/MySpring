@@ -6,14 +6,12 @@ public class OracleArticleDAO implements ArticleDAO {
 
 	@Override
 	public void insert(ArticleVO article) {
-		// TODO Auto-generated method stub
-
+		System.out.println("[핵심로직] MyOracleArticleDAO.insert() 실행");
 	}
 
 	@Override
 	public void updateReadCount(int id, int i) {
-		// TODO Auto-generated method stub
-
+		System.out.println("[핵심로직] MyOracleArticleDAO.updateReadCount() 실행");
 	}
 
 }

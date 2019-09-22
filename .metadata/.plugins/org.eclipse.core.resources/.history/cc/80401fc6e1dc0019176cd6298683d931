@@ -1,0 +1,12 @@
+package tommy.spring.member.service;
+
+import tommy.spring.board.vo.UpdateInfo;
+import tommy.spring.member.vo.MemberVO;
+
+public interface MemberService {
+	
+	void regist(MemberVO member);
+	
+	boolean update(String memberId, UpdateInfo info);
+
+}

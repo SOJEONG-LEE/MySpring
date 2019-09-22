@@ -1,0 +1,20 @@
+package tommy.spring.member.service;
+
+import tommy.spring.board.vo.UpdateInfo;
+import tommy.spring.member.vo.MemberVO;
+
+public enum MemberServiceImpl implements MemberService {
+	
+	@Override
+	public void regist(MemberVO member) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public boolean update(String memberId, UpdateInfo info) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

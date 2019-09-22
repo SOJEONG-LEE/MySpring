@@ -1,0 +1,5 @@
+package tommy.spring.common;
+
+public class LoggingAspect {
+
+}

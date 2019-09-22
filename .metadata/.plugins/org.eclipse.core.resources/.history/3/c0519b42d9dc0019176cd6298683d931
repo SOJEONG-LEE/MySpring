@@ -1,0 +1,5 @@
+package tommy.spring.member.service;
+
+public interface MemberService {
+
+}
