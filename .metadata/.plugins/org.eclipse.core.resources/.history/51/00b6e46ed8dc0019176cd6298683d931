@@ -1,0 +1,23 @@
+package tommy.spring.board.service;
+
+import tommy.spring.board.vo.ArticleVO;
+
+public class WriteArticleServiceImpl implements WriteArticleService {
+
+	
+	
+	public WriteArticleServiceImpl() {
+		super();
+	}
+	
+	
+
+	@Override
+	public void write(ArticleVO article) {
+		// TODO Auto-generated method stub
+
+	}
+	
+	
+
+}

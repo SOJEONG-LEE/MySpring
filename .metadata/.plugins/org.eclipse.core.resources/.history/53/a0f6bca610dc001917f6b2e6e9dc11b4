@@ -1,0 +1,8 @@
+package tommy.spring.web.board.impl;
+
+@Service("boardService")
+public class BoardServiceImpl {
+	
+	
+
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+<typeInfo handle="=myFirst/src&lt;tommy.spring.exam02{MyBean.java[MyBean" modifiers="513" timestamp="1567823144416"/>
+<typeInfo handle="=myboard/src\/main\/java&lt;tommy.spring.polymorphism{Speaker.java[Speaker" modifiers="513" timestamp="1567906832088"/>
+<typeInfo handle="=myboard/src\/main\/java&lt;tommy.spring.lifecycle{MyLifeBean.java[MyLifeBean" modifiers="513" timestamp="1567922735744"/>
+<typeInfo handle="=myboard/C:\/Users\/TJ\/.m2\/repository\/org\/springframework\/spring-beans\/5.1.9.RELEASE\/spring-beans-5.1.9.RELEASE.jar&lt;org.springframework.beans.factory(BeanNameAware.class[BeanNameAware" modifiers="1537" timestamp="1567827933211"/>
+<typeInfo handle="=myboard/C:\/Users\/TJ\/.m2\/repository\/org\/springframework\/spring-beans\/5.1.9.RELEASE\/spring-beans-5.1.9.RELEASE.jar&lt;org.springframework.beans.factory(BeanFactoryAware.class[BeanFactoryAware" modifiers="1537" timestamp="1567827933211"/>
+<typeInfo handle="=myboard/C:\/Users\/TJ\/.m2\/repository\/org\/springframework\/spring-beans\/5.1.9.RELEASE\/spring-beans-5.1.9.RELEASE.jar&lt;org.springframework.beans.factory(DisposableBean.class[DisposableBean" modifiers="1537" timestamp="1567827933211"/>
+<typeInfo handle="=myboard/C:\/Users\/TJ\/.m2\/repository\/org\/springframework\/spring-beans\/5.1.9.RELEASE\/spring-beans-5.1.9.RELEASE.jar&lt;org.springframework.beans.factory(InitializingBean.class[InitializingBean" modifiers="1537" timestamp="1567827933211"/>
+<typeInfo handle="=myboard/C:\/Program Files\/Java\/jre1.8.0_221\/lib\/ext\/jfxrt.jar&lt;javafx.fxml(Initializable.class[Initializable" modifiers="1537" timestamp="1564277729198"/>
+<typeInfo handle="=myboard/C:\/Users\/TJ\/.m2\/repository\/org\/springframework\/spring-beans\/5.1.9.RELEASE\/spring-beans-5.1.9.RELEASE.jar&lt;org.springframework.beans.factory.config(BeanPostProcessor.class[BeanPostProcessor" modifiers="1537" timestamp="1567827933211"/>
+</typeInfoHistroy>
