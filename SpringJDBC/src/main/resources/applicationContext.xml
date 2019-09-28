@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/jdbc https://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd">
+
+	<!-- NamedParameter JDBC Template 공통 -->
+	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource"
+		destroy-method="close"
+		p:driverClassName="oracle.jdbc.driver.OracleDriver"
+		p:url="jdbc:oracle:thin:@localhost:1521:xe" p:username="mytest"
+		p:password="mytest" />
+
+	<!-- 방법1. namedParameterJdbcTemplate 객체 생성 -->
+	<!-- <bean id="namedParameterJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate"> 
+		<constructor-arg> <ref bean="dataSource" /> </constructor-arg> </bean>
+		<bean id="namedParamGuestMessageDao" class="tommy.spring.guestbook.dao.NamedParamGuestMessageDAO"> 
+		<property name="template" ref="namedParameterJdbcTemplate" /> </bean> -->
+
+	<!-- 방법2. DataSource를 주입하는 방법 -->
+	<!-- <bean id="namedParamGuestMessageDao" class="tommy.spring.guestbook.dao.NamedParamGuestMessageDAO"> 
+		<property name="template" ref="dataSource" /> </bean> -->
+
+	<!-- 방법3. -->
+	<!-- <bean id="namedParameterJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+		<constructor-arg>
+			<ref bean="dataSource" />
+		</constructor-arg>
+	</bean>
+	<bean id="simpleJdbcInsert" class="org.springframework.jdbc.core.simple.SimpleJdbcInsert">
+		<constructor-arg>
+			<ref bean="dataSource" />
+		</constructor-arg>
+	</bean>
+	<bean id="namedParamGuestMessageDao" class="tommy.spring.guestbook.dao.NamedParamGuestMessageDAO">
+		<constructor-arg>
+			<ref bean="simpleJdbcInsert" />
+		</constructor-arg>
+		<property name="template" ref="namedParameterJdbcTemplate" />
+	</bean> -->
+	
+	<!-- 방법4. -->
+	<bean id="simpleJdbcInsert" class="org.springframework.jdbc.core.simple.SimpleJdbcInsert">
+		<constructor-arg>
+			<ref bean="dataSource" />
+		</constructor-arg>
+	</bean>
+	<bean id="namedParamGuestMessageDao" class="tommy.spring.guestbook.dao.NamedParamGuestMessageDAO">
+		<constructor-arg>
+			<ref bean="dataSource" />
+		</constructor-arg>
+		<property name="template" ref="dataSource" />
+	</bean>
+
+
+	<!-- JDBC Template -->
+	<!-- <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" 
+		destroy-method="close" p:driverClassName="oracle.jdbc.driver.OracleDriver" 
+		p:url="jdbc:oracle:thin:@localhost:1521:xe" p:username="mytest" p:password="mytest" 
+		/> <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate" 
+		p:dataSource-ref="dataSource" /> <bean id="jdbcTemplateGuestMessageDao" class="tommy.spring.guestbook.dao.JdbcTemplateGuestMessageDAO"> 
+		<constructor-arg> <ref bean="jdbcTemplate" /> </constructor-arg> </bean> -->
+
+	<!-- DataSource -->
+	<!-- DataSource는 Connection을 해준다. -->
+	<!-- -->
+	<!-- <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" 
+		destroy-method="close" p:driverClassName="oracle.jdbc.driver.OracleDriver" 
+		p:url="jdbc:oracle:thin:@localhost:1521:xe" p:username="mytest" p:password="mytest" 
+		/> <bean id="jdbcTemplateGuestMessageDao" class="tommy.spring.guestbook.dao.JdbcTemplateGuestMessageDAO"> 
+		<constructor-arg> <ref bean="dataSource" /> </constructor-arg> </bean> -->
+
+
+</beans>
