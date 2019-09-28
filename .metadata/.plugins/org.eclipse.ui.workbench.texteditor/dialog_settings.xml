@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="Aspect"/>
+		<item key="selection" value="Spring JDBC로"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="JDBC로"/>
+			<item value="memberService"/>
 			<item value="aspect"/>
 			<item value="as"/>
 			<item value="18"/>
 			<item value="ojdbc"/>
 		</list>
 		<list key="replacehistory">
+			<item value="Spring JDBC로"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
