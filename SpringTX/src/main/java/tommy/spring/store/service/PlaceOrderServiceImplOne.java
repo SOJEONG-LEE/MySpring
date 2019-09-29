@@ -15,6 +15,18 @@ public class PlaceOrderServiceImplOne implements PlaceOrderService {
 	private ItemDAO itemDao;
 	private PaymentInfoDAO paymentInfoDao;
 	private PurchaseOrderDAO purchaseOrderDao;
+	
+	@Override
+	public PurchaseOrderResult order(PurchaseOrderRequest orderRequest) throws ItemNotFoundException {
+		Item item = itemDao.findById(orderRequest.getItemId());
+		if (item == null)
+			throw new ItemNotFoundException(orderRequest.getItemId());
+		PaymentInfo paymentInfo = new PaymentInfo(item.getPrice());
+		paymentInfoDao.insert(paymentInfo);
+		PurchaseOrder order = new PurchaseOrder(item.getId(), orderRequest.getAddress(), paymentInfo.getId());
+		purchaseOrderDao.insert(order);
+		return new PurchaseOrderResult(item, paymentInfo, order);
+	}
 
 	public void setItemDao(ItemDAO itemDao) {
 		this.itemDao = itemDao;
@@ -26,18 +38,6 @@ public class PlaceOrderServiceImplOne implements PlaceOrderService {
 
 	public void setPurchaseOrderDao(PurchaseOrderDAO purchaseOrderDao) {
 		this.purchaseOrderDao = purchaseOrderDao;
-	}
-
-	@Override
-	public PurchaseOrderResult order(PurchaseOrderRequest orderRequest) throws ItemNotFoundException {
-		Item item = itemDao.findById(orderRequest.getItemId());
-		if (item == null)
-			throw new ItemNotFoundException(orderRequest.getItemId());
-		PaymentInfo paymentInfo = new PaymentInfo(item.getPrice());
-		paymentInfoDao.insert(paymentInfo);
-		PurchaseOrder order = new PurchaseOrder(item.getId(), orderRequest.getAddress(), paymentInfo.getId());
-		purchaseOrderDao.insert(order);
-		return new PurchaseOrderResult(item, paymentInfo, order);
 	}
 
 }

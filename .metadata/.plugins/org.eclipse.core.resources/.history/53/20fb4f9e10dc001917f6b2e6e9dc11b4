@@ -1,5 +1,0 @@
-package tommy.spring.web.board.impl;
-
-public class BoardServiceImpl {
-
-}

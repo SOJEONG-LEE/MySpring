@@ -1,5 +1,0 @@
-package tommy.spring.web.common;
-
-public class AroundAdvice {
-
-}

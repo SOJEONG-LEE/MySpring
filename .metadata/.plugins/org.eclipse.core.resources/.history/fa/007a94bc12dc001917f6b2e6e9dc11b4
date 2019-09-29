@@ -1,5 +1,0 @@
-package tommy.spring.web.user.impl;
-
-public class UserServiceImpl {
-
-}

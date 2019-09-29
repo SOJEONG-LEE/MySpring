@@ -35,12 +35,16 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="tommy.spring.store"/>
+			<item value="tommy.spring.jdbc"/>
 			<item value="tommy.spring.aop"/>
 		</list>
 		<list key="groupId">
 			<item value="tommy.spring"/>
 		</list>
 		<list key="artifactId">
+			<item value="SpringTX"/>
+			<item value="SpringJDBC"/>
 			<item value="SpringAOP"/>
 		</list>
 		<list key="projectNameTemplate">

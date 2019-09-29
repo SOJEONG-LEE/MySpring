@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="myboard.tommy.spring.polymorphism.BeanFactory"/>
 <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
@@ -20,8 +19,6 @@
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
-<fullyQualifiedTypeName name="java.sql.ResultSet"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="tommy.spring.web.user.UserService"/>
 <fullyQualifiedTypeName name="tommy.spring.web.common.LogAdvice"/>
 <fullyQualifiedTypeName name="tommy.spring.web.user.UserVO"/>
@@ -50,4 +47,17 @@
 <fullyQualifiedTypeName name="tommy.spring.web.board.impl.BoardRowMapper"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="tommy.spring.web.board.BoardVO"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="java.sql.SQLException"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="tommy.spring.guestbook.vo.GuestMessage"/>
+<fullyQualifiedTypeName name="javax.sql.DataSource"/>
+<fullyQualifiedTypeName name="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate"/>
+<fullyQualifiedTypeName name="tommy.spring.guestbook.dao.NamedParamGuestMessageDAO"/>
+<fullyQualifiedTypeName name="org.springframework.jdbc.core.simple.SimpleJdbcInsert"/>
+<fullyQualifiedTypeName name="tommy.spring.store.vo.Item"/>
+<fullyQualifiedTypeName name="tommy.spring.store.vo.PaymentInfo"/>
+<fullyQualifiedTypeName name="tommy.spring.store.vo.PurchaseOrder"/>
+<fullyQualifiedTypeName name="tommy.spring.store.dao.ItemDAO"/>
 </qualifiedTypeNameHistroy>
