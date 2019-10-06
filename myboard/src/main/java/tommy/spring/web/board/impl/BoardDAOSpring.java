@@ -1,3 +1,4 @@
+/*
 package tommy.spring.web.board.impl;
 
 import java.sql.Connection;
@@ -13,7 +14,7 @@ import org.springframework.stereotype.Repository;
 import tommy.spring.web.board.BoardVO;
 import tommy.spring.web.common.JDBCUtil;
 
-@Repository
+@Repository("boardDAOSpring")
 public class BoardDAOSpring {
 	
 	@Autowired
@@ -63,3 +64,4 @@ public class BoardDAOSpring {
 	
 
 }
+*/

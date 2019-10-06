@@ -1,17 +1,24 @@
 package tommy.spring.web.board;
 
-import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.Controller;
 
 import tommy.spring.web.board.impl.BoardDAO;
 
-public class GetBoardListController implements Controller {
+@Controller
+public class GetBoardListController {
 
+	@RequestMapping("/getBoardList.do")
+	public ModelAndView getBoardList(BoardVO vo, BoardDAO boardDAO, ModelAndView mav) {
+		System.out.println("글 목록 검색 처리");
+		mav.addObject("boardList", boardDAO.getBoardList(vo)); // Model 정보저장
+		mav.setViewName("getBoardList.jsp"); // View 정보저장
+		return mav;
+	}
+
+
+/*
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) {
 		System.out.println("글 목록 검색 처리");
@@ -37,5 +44,6 @@ public class GetBoardListController implements Controller {
 		return mav;
 
 	}
+*/
 
 }

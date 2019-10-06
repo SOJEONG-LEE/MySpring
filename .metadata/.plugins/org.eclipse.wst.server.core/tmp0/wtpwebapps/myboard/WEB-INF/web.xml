@@ -8,6 +8,7 @@
 		<servlet-name>action</servlet-name> <servlet-class>tommy.spring.web.controller.DispatcherServlet</servlet-class> 
 		</servlet> <servlet-mapping> <servlet-name>action</servlet-name> <url-pattern>*.do</url-pattern> 
 		</servlet-mapping> -->
+		
 
 	<filter>
 		<filter-name>encodingFilter</filter-name>
@@ -24,8 +25,7 @@
 
 	<servlet>
 		<servlet-name>action</servlet-name>
-		<servlet-class>org.springframework.web.servlet.DispatcherServlet
-		</servlet-class>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
 			<param-value>/WEB-INF/config/presentation-layer.xml</param-value>

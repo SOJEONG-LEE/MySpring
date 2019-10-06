@@ -9,7 +9,7 @@
 	<context:component-scan base-package="tommy.spring.web"> </context:component-scan> 
 	
 	<!-- SimpleUrlHandlerMapping, ViewResolver -->
-	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+	<!-- <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
 		<property name="mappings">
 			<props>
 				<prop key="/login.do">login</prop>
@@ -31,10 +31,10 @@
 	<bean id="deleteBoard" class="tommy.spring.web.board.DeleteBoardController"></bean>
 	<bean id="logout" class="tommy.spring.web.user.LogoutController"></bean>
 	
-	<!-- ViewResovler 등록 -->
+	ViewResovler 등록
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/board/"></property>
 		<property name="suffix" value=".jsp"></property>
-	</bean>
+	</bean> -->
 
 </beans>
