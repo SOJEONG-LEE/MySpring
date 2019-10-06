@@ -10,7 +10,7 @@
 	// 2. 데이터베이스 연동 처리
 	UserVO vo = new UserVO();
 	vo.setId(id);
-	vo.setPasswrod(password);
+	vo.setPassword(password);
 	UserDAO userDAO = new UserDAO();
 	UserVO user = userDAO.getUser(vo);
 

@@ -3,7 +3,7 @@ package tommy.spring.web.user;
 public class UserVO {
 
 	private String id;
-	private String passwrod;
+	private String password;
 	private String name;
 	private String role;
 
@@ -12,7 +12,7 @@ public class UserVO {
 
 	@Override
 	public String toString() {
-		return "UserVO [id=" + id + ", passwrod=" + passwrod + ", name=" + name + ", role=" + role + "]";
+		return "UserVO [id=" + id + ", password=" + password + ", name=" + name + ", role=" + role + "]";
 	}
 
 	public String getId() {
@@ -24,11 +24,11 @@ public class UserVO {
 	}
 
 	public String getPasswrod() {
-		return passwrod;
+		return password;
 	}
 
-	public void setPasswrod(String passwrod) {
-		this.passwrod = passwrod;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public String getName() {

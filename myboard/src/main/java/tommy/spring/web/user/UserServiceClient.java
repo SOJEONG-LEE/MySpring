@@ -16,7 +16,7 @@ public class UserServiceClient {
 		// 3. 로그인 기능 테스트
 		UserVO vo = new UserVO();
 		vo.setId("tommy");
-		vo.setPasswrod("spring");
+		vo.setPassword("spring");
 		UserVO user = userService.getUser(vo);
 		if (user != null) {
 			System.out.println(user.getName() + "님 환영합니다.");

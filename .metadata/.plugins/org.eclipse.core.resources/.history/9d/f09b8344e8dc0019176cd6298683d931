@@ -1,8 +1,0 @@
-package tommy.spring.common;
-
-
-@Aspect
-@Order(3)
-public class ProfilingAspect {
-
-}

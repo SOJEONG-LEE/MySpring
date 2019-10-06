@@ -1,5 +1,0 @@
-package tommy.spring.member.service;
-
-public enum MemberServiceImpl implements MemberService {
-
-}

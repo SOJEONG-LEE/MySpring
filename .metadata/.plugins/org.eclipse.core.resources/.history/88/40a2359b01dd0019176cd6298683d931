@@ -1,8 +1,0 @@
-package tommy.spring.web.board.impl;
-
-import org.springframework.jdbc.core.RowMapper;
-
-public class BoardRowMapper implements RowMapper<BoardVO> {
-	
-	
-}

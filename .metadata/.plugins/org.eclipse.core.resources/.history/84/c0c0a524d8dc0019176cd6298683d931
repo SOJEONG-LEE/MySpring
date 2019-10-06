@@ -1,5 +1,0 @@
-package tommy.spring.board.service;
-
-public interface WriteArticleService {
-
-}

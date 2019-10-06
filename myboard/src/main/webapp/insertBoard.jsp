@@ -8,7 +8,10 @@
 </head>
 <body>
 	<h1>글등록</h1>
-	<a href="logoutProc.jsp">Log Out</a>
+	<!-- MVC1 -->
+	<!-- <a href="logoutProc.jsp">Log Out</a> -->
+	<!-- MVC2 -->
+	<a href="logout.do">Log Out</a>
 	<hr>
 	<!-- MVC1 -->
 	<!-- <form action="insertBoardProc.jsp" method="post"> -->
@@ -33,6 +36,6 @@
 		</table>
 	</form>
 	<hr>
-	<a href="getBoardList.jsp">글 목록으로 가기</a>
+	<a href="getBoardList.do">글 목록으로 가기</a>
 </body>
 </html>
