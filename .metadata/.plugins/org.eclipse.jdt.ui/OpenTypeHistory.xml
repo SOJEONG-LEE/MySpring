@@ -19,4 +19,5 @@
 <typeInfo handle="=myboard/C:\/Users\/TJ\/.m2\/repository\/org\/springframework\/spring-jdbc\/5.1.9.RELEASE\/spring-jdbc-5.1.9.RELEASE.jar&lt;org.springframework.jdbc.core(RowMapper.class[RowMapper" modifiers="1537" timestamp="1569131120984"/>
 <typeInfo handle="=SpringJDBC/src\/main\/java&lt;tommy.spring.guestbook.dao{GuestMessageDAO.java[GuestMessageDAO" modifiers="513" timestamp="1569637880885"/>
 <typeInfo handle="=SpringTX/src\/main\/java&lt;tommy.spring.store.service{PlaceOrderService.java[PlaceOrderService" modifiers="513" timestamp="1569655147752"/>
+<typeInfo handle="=myboard/C:\/Users\/TJ\/.m2\/repository\/org\/springframework\/spring-webmvc\/5.1.9.RELEASE\/spring-webmvc-5.1.9.RELEASE.jar&lt;org.springframework.web.servlet.mvc(Controller.class[Controller" modifiers="1537" timestamp="1567827935144"/>
 </typeInfoHistroy>

@@ -4,16 +4,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import tommy.spring.web.board.impl.BoardDAO;
-
-@Controller
+@Deprecated
+//@Controller
 public class InsertBoardController {
 	
 	// Controller 어노테이션 사용하는 경우
 	@RequestMapping("/insertBoard.do")
+	// DAO 객체 역시 Command 객체와 마찬가지로 매개변수 선언하면 스프링 컨테이너가 해당 객체를 생성하여 전달해준다.
 	public String insertBoard(BoardVO vo, BoardDAO boardDAO) {
 		
 		System.out.println("글 등록 처리");
 
+		// 1. 사용자 입력 정보 추출 : 커맨드 객체가 자동으로 처리해 줌. 
 		// insertBoardProc.jsp 코드
 		// 1. 사용자 입력 정보 추출
 //		request.setCharacterEncoding("UTF-8");

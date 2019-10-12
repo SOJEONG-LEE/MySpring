@@ -2,6 +2,8 @@ package tommy.spring.web.board;
 
 import java.sql.Date;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class BoardVO {
 
 	private int seq;
@@ -10,6 +12,9 @@ public class BoardVO {
 	private String content;
 	private Date regDate;
 	private int cnt;
+	private String searchCondition;
+	private String searchKeyword;
+	private MultipartFile uploadFile;
 
 	// getter, setter 추가 // Source -> Generate toString ... 선택 -> 모든 필드 체크 확인 및
 	// Generate 클릭
@@ -68,4 +73,28 @@ public class BoardVO {
 		this.cnt = cnt;
 	}
 
+	public String getSearchCondition() {
+		return searchCondition;
+	}
+
+	public void setSearchCondition(String searchCondition) {
+		this.searchCondition = searchCondition;
+	}
+
+	public String getSearchKeyword() {
+		return searchKeyword;
+	}
+
+	public void setSearchKeyword(String searchKeyword) {
+		this.searchKeyword = searchKeyword;
+	}
+
+	public MultipartFile getUploadFile() {
+		return uploadFile;
+	}
+
+	public void setUploadFile(MultipartFile uploadFile) {
+		this.uploadFile = uploadFile;
+	}
+	
 }

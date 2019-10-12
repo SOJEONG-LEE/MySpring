@@ -8,7 +8,16 @@
 		<servlet-name>action</servlet-name> <servlet-class>tommy.spring.web.controller.DispatcherServlet</servlet-class> 
 		</servlet> <servlet-mapping> <servlet-name>action</servlet-name> <url-pattern>*.do</url-pattern> 
 		</servlet-mapping> -->
-		
+	
+	 <context-param>
+	 	<param-name>contextConfigLocation</param-name>
+	 	<param-value>classpath:applicationContext.xml</param-value>
+	 </context-param>
+
+	<!--  ContextLoaderListener는 기본적으로  /WEB-INF/applicationContext.xml을 찾는다. -->	
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
 
 	<filter>
 		<filter-name>encodingFilter</filter-name>
@@ -26,6 +35,8 @@
 	<servlet>
 		<servlet-name>action</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<!-- 설정을 안해주면 부모: WEB-INF/applicationContext.xml을 읽는다. 없으면 에러
+			다음으로는 자식: WEB-INF/action-servlet.xml을 읽는다. -->
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
 			<param-value>/WEB-INF/config/presentation-layer.xml</param-value>

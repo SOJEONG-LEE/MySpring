@@ -1,19 +1,19 @@
-/*
 package tommy.spring.web.board.impl;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import tommy.spring.web.board.BoardService;
 import tommy.spring.web.board.BoardVO;
-import tommy.spring.web.common.LogAdvice;
 
 @Service("boardService")
 public class BoardServiceImpl implements BoardService {
 
 	@Autowired
 	private BoardDAOSpring boardDAO;
-	
+
 //	@Autowired
 //	private BoardDAO boardDAO;
 
@@ -55,4 +55,3 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 }
-*/

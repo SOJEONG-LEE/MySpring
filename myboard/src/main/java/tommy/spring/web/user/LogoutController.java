@@ -1,30 +1,36 @@
 package tommy.spring.web.user;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.Controller;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-public class LogoutController implements Controller {
+@Controller
+public class LogoutController {
 
-	@Override
-	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) {
+	@RequestMapping("/logout.do")
+	public String logout(HttpSession session) {
 		System.out.println("로그아웃 처리");
-
-		// logout.jsp 코드
-		// 1. 브라우저와 연결된 세션 객체를 종료
-		HttpSession session = request.getSession(false);
 		session.invalidate();
-		
-		// 2. 세션 종료 후 메인 화면으로 이동
-//		response.sendRedirect("login.jsp");
-//		return "login";
-		ModelAndView mav = new ModelAndView();
-//		mav.setViewName("login.jsp");
-		mav.setViewName("redirect:login.jsp");
-		return mav;
+		return "login.jsp";
 	}
+
+//	@Override
+//	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) {
+//		System.out.println("로그아웃 처리");
+//
+//		// logout.jsp 코드
+//		// 1. 브라우저와 연결된 세션 객체를 종료
+//		HttpSession session = request.getSession(false);
+//		session.invalidate();
+//		
+//		// 2. 세션 종료 후 메인 화면으로 이동
+////		response.sendRedirect("login.jsp");
+////		return "login";
+//		ModelAndView mav = new ModelAndView();
+////		mav.setViewName("login.jsp");
+//		mav.setViewName("redirect:login.jsp");
+//		return mav;
+//	}
 
 }

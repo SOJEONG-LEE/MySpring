@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import tommy.spring.web.board.impl.BoardDAO;
-
-@Controller
+@Deprecated
+//@Controller
 public class GetBoardListController {
 
 	@RequestMapping("/getBoardList.do")
