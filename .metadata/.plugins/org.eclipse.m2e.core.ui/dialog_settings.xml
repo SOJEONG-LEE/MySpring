@@ -12,6 +12,7 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\SOJEONG\mySpring\myboard"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -35,6 +36,7 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="tommy.spring.mybatis"/>
 			<item value="tommy.spring.store"/>
 			<item value="tommy.spring.jdbc"/>
 			<item value="tommy.spring.aop"/>
@@ -43,6 +45,7 @@
 			<item value="tommy.spring"/>
 		</list>
 		<list key="artifactId">
+			<item value="MybatisProject"/>
 			<item value="SpringTX"/>
 			<item value="SpringJDBC"/>
 			<item value="SpringAOP"/>

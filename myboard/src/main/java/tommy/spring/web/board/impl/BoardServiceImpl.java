@@ -10,9 +10,12 @@ import tommy.spring.web.board.BoardVO;
 
 @Service("boardService")
 public class BoardServiceImpl implements BoardService {
-
+	
 	@Autowired
-	private BoardDAOSpring boardDAO;
+	private BoardDAOMybatis boardDAO;
+
+//	@Autowired
+//	private BoardDAOSpring boardDAO;
 
 //	@Autowired
 //	private BoardDAO boardDAO;

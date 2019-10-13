@@ -31,6 +31,7 @@
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 	
+	
 	<!-- TransactionManager -->
 	<bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource" />
@@ -48,9 +49,21 @@
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut" />
 	</aop:config>
 
+
 	<!-- aspect annotation -->
 	<context:component-scan base-package="tommy.spring.web"></context:component-scan>
 	<aop:aspectj-autoproxy />
+	
+	
+	<!-- Mybatis-SqlSessionFactoryBean -->
+	<bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="classpath:mybatis-config.xml" />
+	</bean>
+	
+	<bean class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sessionFactory" />
+	</bean>
 
 
 	<!-- aspect -->
