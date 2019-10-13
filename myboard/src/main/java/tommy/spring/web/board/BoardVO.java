@@ -2,18 +2,30 @@ package tommy.spring.web.board;
 
 import java.sql.Date;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlTransient;
+
 import org.springframework.web.multipart.MultipartFile;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+@XmlAccessorType(XmlAccessType.FIELD)
 public class BoardVO {
 
+	@XmlAttribute
 	private int seq;
 	private String title;
 	private String writer;
 	private String content;
 	private Date regDate;
 	private int cnt;
+	@XmlTransient
 	private String searchCondition;
+	@XmlTransient
 	private String searchKeyword;
+	@XmlTransient
 	private MultipartFile uploadFile;
 
 	// getter, setter 추가 // Source -> Generate toString ... 선택 -> 모든 필드 체크 확인 및
@@ -73,6 +85,7 @@ public class BoardVO {
 		this.cnt = cnt;
 	}
 
+	@JsonIgnore
 	public String getSearchCondition() {
 		return searchCondition;
 	}
@@ -81,6 +94,7 @@ public class BoardVO {
 		this.searchCondition = searchCondition;
 	}
 
+	@JsonIgnore
 	public String getSearchKeyword() {
 		return searchKeyword;
 	}
@@ -89,6 +103,7 @@ public class BoardVO {
 		this.searchKeyword = searchKeyword;
 	}
 
+	@JsonIgnore
 	public MultipartFile getUploadFile() {
 		return uploadFile;
 	}

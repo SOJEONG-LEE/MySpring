@@ -11,5 +11,6 @@
 <hr>
 	<h3><a href="login.do">로그인 페이지</a></h3>
 	<h3><a href="getBoardList.do">글 목록 페이지</a></h3>
-</hr>
+	<a href="dataTransform.do">글 목록 변환 처리</a> 
+<hr>
 </body>
